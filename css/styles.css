@@ -31,22 +31,22 @@ PERSONS DATA MAIN DIV
 .container {
     width: 100%;
     height: 100vh;
-    background-color: rgba(23, 23, 23, 0.5);
     position: relative;
-}
-
-.container h1 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 0;
+    text-align: center;
+    background-color: aqua
 }
 
 .person {
+    background-color: rgb(250, 81, 81);
     position: absolute;
-    width: 900px;
+    z-index: 1;
+    width: 800px;
     min-height: 500px;
     margin: 0 auto;
     display: grid;
+    left: 50%;
+    transform: translate(-50%);
     grid-template-columns: 250px 1fr;
     grid-template-areas: 
         "image info"
@@ -118,7 +118,6 @@ SMALL IMG CAROUSEL
 } */
 
 .arrow {
-    display: flex;
     font-size: 2em;
     font-weight: bold;
     height: 100%;
