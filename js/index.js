@@ -62,7 +62,6 @@ function renderCarousel(persons) {
     persons.forEach((person, idx) => {
         html += createCarouselHtml(person, idx);
     });
-
     containerEl.innerHTML = html;
 }
 function createCarouselHtml(person, idx) {
@@ -81,7 +80,7 @@ renderCarousel(photosInfo);
 // Attach events to carousel
 document.querySelectorAll('.carousel .person-img-carousel').forEach((el) => {
     el.addEventListener('click', function (event) {
-        const personIndex = el.dataset.idx;
+        const personIndex = parseInt(this.dataset.idx, 10);
         curPersonIdx = personIndex;
         renderPerson(photosInfo[curPersonIdx]);
     });
@@ -114,7 +113,7 @@ function renderPrevPerson() {
     renderPerson(person);
 }
 
-//Hide / show infor onclick;
+//Hide / show info onclick;
 function attachCollapseInfo() {
     const toggleBtn = document.querySelector('.person .toggle-info');
     const infoEl = document.querySelector('.person .info-cont');

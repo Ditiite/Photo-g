@@ -54,7 +54,7 @@ const photosInfo = [
         favoriteQuote:
             'Every strike brings me closer to the next home run-Babe Ruth',
         joinedOn: '04.12.2017'
-    // },
+    },
     // {
     //     firstName: 'Niloofar',
     //     lastName: 'Motamed',

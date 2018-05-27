@@ -23,11 +23,12 @@ const countries = [
 ];
 
 changeBackground();
-//setInterval(changeBackground, 5000);
+setInterval(changeBackground, 5000);
 
 function changeBackground() {
     const mainImg = document.querySelector('.main-img');
     const randIdx = Math.floor(Math.random() * countries.length);
     const image = `url('${countries[randIdx]}')`;
-    mainImg.style.backgroundImage = image;
+    mainImg.style.background = `linear-gradient(-45deg, rgb(189, 90, 114),rgba(225, 196, 201, 0.3)), url('${countries[randIdx]}') no-repeat center`;
+    mainImg.style.backgroundSize = 'cover';
 }

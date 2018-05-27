@@ -7,7 +7,7 @@
     const leftBtn = view.querySelector('.arrow-left');
     const rightBtn = view.querySelector('.arrow-right');
 
-    const sliderLength = slideWidth * 36;
+    const sliderLength = slideWidth * 35;
 
     let current = 0;
     const boundaryLeft = 0;
