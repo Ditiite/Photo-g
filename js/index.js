@@ -11,7 +11,7 @@ function createPersonHtml(person) {
             <img class="persons-img" src="images/${person.src}" alt="${person.alt}" />
             <div class="persons-img-buttons">
                 <p class="persons-name">${person.firstName} ${person.lastName}</p>
-                <button class="prev-person"><</button>
+                <button class="prev-person" onclick="renderPrevPerson()"><</button>
                 <button class="toggle-info">...</button>
                 <button class="next-person"  onclick="renderNextPerson()">></button>
             </div>
@@ -95,15 +95,25 @@ function renderNextPerson() {
     attachCollapseInfo();
 }
 
+//Show prev person
+function renderPrevPerson() {
+    const person = photosInfo[curPersonIdx];
 
+    if (curPersonIdx === 0) {
+        curPersonIdx = photosInfo.length;
+    }
+
+    curPersonIdx -= 1;
+    renderPerson(person);
+    attachCollapseInfo();
+}
+
+//Hide / show infor onclick;
 function attachCollapseInfo() {
     const toggleBtn = document.querySelector('.person .toggle-info');
     const infoEl = document.querySelector('.person .info-cont');
 
-    
     toggleBtn.addEventListener('click', function() {
-        console.log(infoEl.innerHTML);
         infoEl.classList.toggle('hidden');
     });
-    
 }
