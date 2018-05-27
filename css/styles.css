@@ -29,7 +29,7 @@ Main big background
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 }
 
 .main-title {
@@ -49,7 +49,6 @@ PERSONS DATA MAIN DIV
     position: relative;
     z-index: 0;
     text-align: center;
-    background-color: aqua
 }
 
 .person {
@@ -164,21 +163,17 @@ SMALL IMG CAROUSEL
     height: 200px;
     width: 100%;
     background-color: blueviolet;
-    padding: 5px;
 }
 
 .carousel-outer .carousel {
     position: relative;
     font-size: 0;
     white-space: nowrap;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-wrap: nowrap;
 }
 
-.carousel-outer .carousel > div {
+
+.carousel-outer .carousel > img {
+    cursor: pointer;
     height: 190px;
     width: 190px;
     background-color: bisque;
@@ -188,7 +183,6 @@ SMALL IMG CAROUSEL
     flex-basis:  180px;
     flex-shrink: 0;
     flex-grow: 0;
-    color: blue;
 }
 
 .person-img-carousel {
@@ -203,13 +197,6 @@ SMALL IMG CAROUSEL
     transform: scale(1.1);
     box-shadow: var(--box-shadow);
 }
-
-/* .carousel-outer .carousel > div::before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-} */
 
 .arrow {
     font-size: 2em;
@@ -232,3 +219,5 @@ SMALL IMG CAROUSEL
 .carousel-outer > .arrow-right {
     right: 0;
 }
+
+

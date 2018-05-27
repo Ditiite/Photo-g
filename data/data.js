@@ -54,24 +54,24 @@ const photosInfo = [
         favoriteQuote:
             'Every strike brings me closer to the next home run-Babe Ruth',
         joinedOn: '04.12.2017'
-    },
-    {
-        firstName: 'Niloofar',
-        lastName: 'Motamed',
-        title: 'Junior developer',
-        nationality: 'Iranian',
-        src: 'Niloo.jpg',
-        alt: 'Niloo',
-        skills: ['HTML', 'CSS', 'JS', 'React', 'Redux'],
-        whySofterDeveloper:
-            'To build a decent career for myself, something that I will enjoy doing everyday',
-        longTermVision:
-            'Being a skillful developer who works remotely and also runs her startup company from Nice',
-        motivatesMe:
-            'traveling around the world, reading good literature, fine arts, making money to do these',
-        favoriteQuote: 'An eye for an eye, leaves the whole world blind',
-        joinedOn: '04.12.2017'
-    },
+    // },
+    // {
+    //     firstName: 'Niloofar',
+    //     lastName: 'Motamed',
+    //     title: 'Junior developer',
+    //     nationality: 'Iranian',
+    //     src: 'Niloo.jpg',
+    //     alt: 'Niloo',
+    //     skills: ['HTML', 'CSS', 'JS', 'React', 'Redux'],
+    //     whySofterDeveloper:
+    //         'To build a decent career for myself, something that I will enjoy doing everyday',
+    //     longTermVision:
+    //         'Being a skillful developer who works remotely and also runs her startup company from Nice',
+    //     motivatesMe:
+    //         'traveling around the world, reading good literature, fine arts, making money to do these',
+    //     favoriteQuote: 'An eye for an eye, leaves the whole world blind',
+    //     joinedOn: '04.12.2017'
+    // },
     {
         firstName: 'Sanjog',
         lastName: 'Shrestha',

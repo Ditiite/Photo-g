@@ -3,6 +3,7 @@ function renderPerson(person) {
     let containerEl = document.querySelector('.person');
     containerEl.innerHTML = createPersonHtml(person);
     //console.log(person.curPersonIdx);
+    attachCollapseInfo();
 }
 
 function createPersonHtml(person) {
@@ -58,29 +59,34 @@ function renderCarousel(persons) {
     let containerEl = document.querySelector('.carousel');
     let html = '';
 
-    persons.forEach(person => {
-        html += createCarouselHtml(person);
+    persons.forEach((person, idx) => {
+        html += createCarouselHtml(person, idx);
     });
 
     containerEl.innerHTML = html;
 }
-
-function createCarouselHtml(person) {
+function createCarouselHtml(person, idx) {
     const html = `
-        <div>
-            <img class="person-img-carousel" src="images/${person.src}" alt="${person.alt}"/> 
-        </div>
+        <img data-idx="${idx}" class="person-img-carousel" src="images/${person.src}" alt="${person.alt}"/> 
     `;
 
     return html;
 }
 
 
+
 let curPersonIdx = 0;
 renderCarousel(photosInfo);
-renderPerson(photosInfo[curPersonIdx]);
-attachCollapseInfo();
 
+// Attach events to carousel
+document.querySelectorAll('.carousel .person-img-carousel').forEach((el) => {
+    el.addEventListener('click', function (event) {
+        const personIndex = el.dataset.idx;
+        curPersonIdx = personIndex;
+        renderPerson(photosInfo[curPersonIdx]);
+    });
+});
+renderPerson(photosInfo[curPersonIdx]);
 
 // Show next person
 function renderNextPerson() {
@@ -92,11 +98,12 @@ function renderNextPerson() {
     }
 
     renderPerson(person);
-    attachCollapseInfo();
+
 }
 
 //Show prev person
 function renderPrevPerson() {
+
     const person = photosInfo[curPersonIdx];
 
     if (curPersonIdx === 0) {
@@ -105,7 +112,6 @@ function renderPrevPerson() {
 
     curPersonIdx -= 1;
     renderPerson(person);
-    attachCollapseInfo();
 }
 
 //Hide / show infor onclick;
