@@ -14,7 +14,6 @@ const countries = [
     "images/countries/hong-kong1.jpg",
     "images/countries/hungary.jpg",
     "images/countries/india.jpg",
-    "images/countries/iran.jpg",
     "images/countries/iran1.jpg",
     "images/countries/iran2.jpg",
     "images/countries/iran3.jpg",
@@ -48,7 +47,8 @@ setInterval(changeBackground, 5000);
 function changeBackground() {
     const mainImg = document.querySelector('.main-img');
     const randIdx = Math.floor(Math.random() * countries.length);
+    console
     const image = `url('${countries[randIdx]}')`;
-    mainImg.style.background = `linear-gradient(-45deg, rgb(189, 90, 114),rgba(225, 196, 201, 0.3)), url('${countries[randIdx]}') no-repeat center`;
+    mainImg.style.background = `linear-gradient(to left, rgba(175, 175, 174, 0.5),rgba(255, 182, 0, 0.3)), url('${countries[randIdx]}') no-repeat center`;
     mainImg.style.backgroundSize = 'cover';
 }
