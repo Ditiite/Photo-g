@@ -182,6 +182,8 @@ SMALL IMG CAROUSEL
     height: 200px;
     width: 100%;
     background-color: transparent;
+    animation: fade-slide-up 2s .5s cubic-bezier(.11, .16, .36, .98) forwards;
+    opacity: 0;
 }
 
 .carousel-outer .carousel {
