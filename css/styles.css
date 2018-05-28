@@ -27,17 +27,36 @@ Main big background
 .main-img {
     width: 100%;
     min-height: 100vh;
+    perspective: 100px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transform-style: preserve-3d;
 }
 
 .main-title {
+    animation: fade-slide-up 2s .5s cubic-bezier(.11, .16, .36, .98) forwards;
     text-align: center;
     font-size: 1.5em;
     padding: 20px;
+    transform-style: preserve-3d;
+    opacity: 0;
+    color: #fff;
 }
 
+
+
+
+@keyframes fade-slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
 /*============================
 PERSONS DATA MAIN DIV
 =============================*/
@@ -51,6 +70,7 @@ PERSONS DATA MAIN DIV
 }
 
 .person {
+    /* display: none; */
     position: absolute;
     z-index: 1;
     width: 800px;

@@ -121,8 +121,24 @@ function attachCollapseInfo() {
     toggleBtn.addEventListener('click', function() {
         infoEl.classList.toggle('hidden');
     });
+    moveUp();
 }
 
-$('.trigger').on('click', function(){
-    $(this).toggleClass('clicked');
-  });
+
+
+// Move image up
+function moveUp() {
+    const img = document.querySelector('.person-img');
+    let position = 0;
+    let interval = setInterval(frame, 10);
+
+    function frame() {
+        if (position == 500) {
+            clearInterval(position);            
+        } else {
+            position ++;
+            img.style.right = position + 'px';
+            img.style.left = position + 'px';
+        }
+    }
+}
