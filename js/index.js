@@ -8,7 +8,7 @@ function renderPerson(person) {
 
 function createPersonHtml(person) {
     let html = `
-        <div class="persons-img-container">
+        <div class="persons-img-container trigger">
             <img class="persons-img" src="images/${person.src}" alt="${person.alt}" />
             <div class="persons-img-buttons">
                 <p class="persons-name">${person.firstName} ${person.lastName}</p>
@@ -17,7 +17,7 @@ function createPersonHtml(person) {
                 <button class="next-person"  onclick="renderNextPerson()">></button>
             </div>
         </div>
-        <div class="info-cont hidden">
+        <div class="info-cont hidden box">
             <div class="persons-info-container">
 
                 <p class="right">Title: </p>
@@ -122,3 +122,7 @@ function attachCollapseInfo() {
         infoEl.classList.toggle('hidden');
     });
 }
+
+$('.trigger').on('click', function(){
+    $(this).toggleClass('clicked');
+  });
