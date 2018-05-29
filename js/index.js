@@ -18,7 +18,7 @@ function createPersonHtml(person) {
             </div>
         </div>
         <div class="info-cont hidden box">
-            <div class="persons-info-container">
+            <div class="persons-info-container circle">
 
                 <p class="right">Title: </p>
                 <p class="left">${person.title}</p>

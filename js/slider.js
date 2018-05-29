@@ -52,3 +52,9 @@ function changeBackground() {
     mainImg.style.background = `url('${countries[randIdx]}') no-repeat center`;
     mainImg.style.backgroundSize = 'cover';
 }
+
+// Main bg img on load of the page comes from top to down.
+window.onload = function () {
+    var ball = document.querySelector('.main-img')
+    ball.style.marginTop = "0";
+};
