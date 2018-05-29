@@ -48,13 +48,16 @@ function changeBackground() {
     const mainImg = document.querySelector('.main-img');
     const randIdx = Math.floor(Math.random() * countries.length);
     
-    const image = `url('${countries[randIdx]}')`;
+    // const image = `url('${countries[randIdx]}')`;
     mainImg.style.background = `url('${countries[randIdx]}') no-repeat center`;
+    mainImg.style.opacity = '0';
     mainImg.style.backgroundSize = 'cover';
-}
+    
+    }
 
 // Main bg img on load of the page comes from top to down.
 window.onload = function () {
-    var ball = document.querySelector('.main-img')
-    ball.style.marginTop = "0";
+    let slowSlide = document.querySelector('.main-img')
+    slowSlide.style.marginTop = "0";
+
 };

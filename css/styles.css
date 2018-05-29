@@ -11,7 +11,8 @@
     --orange: rgb(255, 182, 0);
     --bg-color-button: rgba(0, 0, 0, 0.7);
     --box-shadow: 3px 3px 20px rgb(56, 56, 56); 
-    --font: 'Montserrat', sans-serif;
+    /* --font: 'Montserrat', sans-serif; */
+    --font: 'Raleway', sans-serif; 
 }
 
 .hidden {
@@ -158,7 +159,7 @@ PERSONS INFO FIELD
     height: 450px;
     width: 450px;
     background-color: rgba(255, 182, 0, 0.8); 
-    /* border-radius: 50%; */
+    border-radius: 50%; 
     box-shadow: var(--box-shadow);
     
 }
@@ -169,7 +170,7 @@ PERSONS INFO FIELD
     height: fit-content;
     grid-gap: 10px;  
     justify-content: stretch;
-    /* margin: 50% auto; */
+    margin: 50% auto; 
     transform: translateY(-50%);
 } 
 
@@ -272,10 +273,20 @@ SMALL IMG CAROUSEL
     background-color: rgba(23, 23, 23, 0.5);
     padding: 85px 25px 0 25px;
     color: var(--orange);
+    opacity: 0;
+}
+
+.arrow:hover {
+    opacity: 1;
 }
 
 .carousel-outer > .arrow-left {
     left: 0;
+}
+
+.arrow .fa-arrow-circle-left,
+.arrow .fa-arrow-circle-right {
+    font-size: 2em;
 }
 
 .carousel-outer > .arrow-right {

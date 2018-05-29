@@ -12,13 +12,13 @@ function createPersonHtml(person) {
             <img class="persons-img" src="images/${person.src}" alt="${person.alt}" />
             <div class="persons-img-buttons">
                 <p class="persons-name">${person.firstName} ${person.lastName}</p>
-                <button class="prev-person" onclick="renderPrevPerson()"><</button>
+                <button class="prev-person" onclick="renderPrevPerson()"><i class="fas fa-arrow-circle-left"></i></button>
                 <button class="toggle-info">...</button>
-                <button class="next-person"  onclick="renderNextPerson()">></button>
+                <button class="next-person"  onclick="renderNextPerson()"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
         </div>
         <div class="info-cont hidden box">
-            <div class="persons-info-container circle">
+            <div class="persons-info-container">
 
                 <p class="right">Title: </p>
                 <p class="left">${person.title}</p>
@@ -64,6 +64,7 @@ function renderCarousel(persons) {
     });
     containerEl.innerHTML = html;
 }
+
 function createCarouselHtml(person, idx) {
     const html = `
         <img data-idx="${idx}" class="person-img-carousel" src="images/${person.src}" alt="${person.alt}"/> 
@@ -85,16 +86,17 @@ document.querySelectorAll('.carousel .person-img-carousel').forEach((el) => {
         renderPerson(photosInfo[curPersonIdx]);
     });
 });
+
 renderPerson(photosInfo[curPersonIdx]);
 
 // Show next person
 function renderNextPerson() {
-    curPersonIdx += 1;
-    const person = photosInfo[curPersonIdx];
-
     if (curPersonIdx === photosInfo.length - 1) {
-        curPersonIdx = -1;
+        curPersonIdx = 0;
+    } else {
+        curPersonIdx += 1;
     }
+    const person = photosInfo[curPersonIdx];
 
     renderPerson(person);
 
@@ -102,14 +104,13 @@ function renderNextPerson() {
 
 //Show prev person
 function renderPrevPerson() {
-
+    if (curPersonIdx === 0) {
+        curPersonIdx = photosInfo.length -1;
+    } else {
+        curPersonIdx -= 1;
+    }
     const person = photosInfo[curPersonIdx];
 
-    if (curPersonIdx === 0) {
-        curPersonIdx = photosInfo.length;
-    }
-
-    curPersonIdx -= 1;
     renderPerson(person);
 }
 

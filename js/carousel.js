@@ -8,14 +8,18 @@
     const rightBtn = view.querySelector('.arrow-right');
 
     const sliderLength = slideWidth * 35;
-
+    console.log('viewLength', viewLength)
+    console.log('viewLength', viewLength)
+    // Curreny position 
     let current = 0;
+    //Doesn't go more than 0s
     const boundaryLeft = 0;
-    const boundaryRight = -1 * Math.ceil((sliderLength - viewLength) / slideWidth) * slideWidth;
-    
+    const boundaryRight = sliderLength - viewLength;
+
     rightBtn.addEventListener('click', () => {
         moveRight();
     });
+
     leftBtn.addEventListener('click', () => {
         moveLeft();
     });
@@ -24,21 +28,18 @@
     // Functions
     //==========
 
-    function render() {
+    function render(current) {
         slider.style.transform = `translateX(${current}px)`;
     }
 
     function moveRight() {
-        const nextOffset = current - slideWidth;
-        if (nextOffset < boundaryRight) {
-            return;
-        }
-        current = nextOffset;
-        render();
+        current = current - 200 > - boundaryRight ? current - 200 : current; 
+        render(current);
     }
 
     function moveLeft() {
         const nextOffset = current + slideWidth;
+
         if (nextOffset > boundaryLeft) {
             // do nth
             return;
@@ -46,4 +47,5 @@
         current = nextOffset;
         render();
     }
+
 }());
